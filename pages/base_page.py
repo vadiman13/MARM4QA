@@ -14,16 +14,6 @@ class BasePage:
     def open_authorization_url(self, page_url):
         self.driver.get(page_url)
 
-    def get_authorization(self):
-        # Заполнение полей логина и пароля
-        self.go_to_page(TestUrls.AuthorizationPageUrl)
-        self.wait_element_visible(AuthorizationLocators.LOGIN_INPUT, 5)
-        self.add_value(AuthorizationLocators.LOGIN_INPUT, VadlidCreeds.login)
-        self.wait_element_visible(AuthorizationLocators.PASSWORD_INPUT, 5)
-        self.add_value(AuthorizationLocators.PASSWORD_INPUT, VadlidCreeds.password)
-        self.click_on_element(AuthorizationLocators.AUTH_BUTTON)
-        self.wait_element_visible(MapPageLocators.MAP, 5)
-
     def go_to_page(self, page_url):
         self.driver.get(page_url)
 

@@ -41,6 +41,16 @@ class AuthorizationPage(BasePage):
     def wait_error_visible(self):
         self.wait_element_visible(AuthorizationLocators.ERROR, 5)
 
+    def get_authorization(self):
+        # Заполнение полей логина и пароля
+        self.go_to_page(TestUrls.AuthorizationPageUrl)
+        self.wait_element_visible(AuthorizationLocators.LOGIN_INPUT, 5)
+        self.add_value(AuthorizationLocators.LOGIN_INPUT, VadlidCreeds.login)
+        self.wait_element_visible(AuthorizationLocators.PASSWORD_INPUT, 5)
+        self.add_value(AuthorizationLocators.PASSWORD_INPUT, VadlidCreeds.password)
+        self.click_on_element(AuthorizationLocators.AUTH_BUTTON)
+        self.wait_element_visible(MapPageLocators.MAP, 5)
+
 
 
 
