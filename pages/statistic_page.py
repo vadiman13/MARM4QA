@@ -1,5 +1,7 @@
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+
+import locators.locators
 from data.urls import TestUrls
 from data.creeds import VadlidCreeds, InvalidCreeds
 from locators.locators import AuthorizationLocators, MapPageLocators
@@ -10,11 +12,16 @@ from selenium.webdriver.common.by import By
 import time
 import allure
 
-class StatisticPage:
+class StatisticPage(BasePage):
 
-    @allure.step('Проверка ')
-    def check_diagrams(self):
-        self.go_to_autorization()
-        self.valid_sign_marm()
+    @allure.step('Переход в раздел Статистика-Основная')
+    def go_to_statistic_main(self):
+        self.get_authorization()
         self.go_to_page(TestUrls.StatisticsMainPageUrl)
+
+
+
+
+
+
 

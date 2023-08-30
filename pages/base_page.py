@@ -1,5 +1,9 @@
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+from locators.locators import AuthorizationLocators
+from data.urls import TestUrls
+from data.creeds import VadlidCreeds
+from locators.locators import MapPageLocators
 
 
 class BasePage:
@@ -9,6 +13,16 @@ class BasePage:
 
     def open_authorization_url(self, page_url):
         self.driver.get(page_url)
+
+    def get_authorization(self):
+        # Заполнение полей логина и пароля
+        self.go_to_page(TestUrls.AuthorizationPageUrl)
+        self.wait_element_visible(AuthorizationLocators.LOGIN_INPUT, 5)
+        self.add_value(AuthorizationLocators.LOGIN_INPUT, VadlidCreeds.login)
+        self.wait_element_visible(AuthorizationLocators.PASSWORD_INPUT, 5)
+        self.add_value(AuthorizationLocators.PASSWORD_INPUT, VadlidCreeds.password)
+        self.click_on_element(AuthorizationLocators.AUTH_BUTTON)
+        self.wait_element_visible(MapPageLocators.MAP, 5)
 
     def go_to_page(self, page_url):
         self.driver.get(page_url)
@@ -38,15 +52,6 @@ class BasePage:
 
     def find_text(self, element):
         return self.find_element(element).text
-
-    def get_authorization(self):
-        self.open_authorization_url(TestUrls.AuthorizationPageUrl)
-        self.wait_element_visible(AuthorizationLocators.LOGIN_INPUT, 5)
-        self.add_value(AuthorizationLocators.LOGIN_INPUT, VadlidCreeds.login)
-        self.wait_element_visible(AuthorizationLocators.PASSWORD_INPUT, 5)
-        self.add_value(AuthorizationLocators.PASSWORD_INPUT, VadlidCreeds.password)
-        self.click_on_element(AuthorizationLocators.AUTH_BUTTON)
-        self.wait_element_visible(MapPageLocators.MAP, 5)
 
 
     def find_element_located(self, element, time=10):

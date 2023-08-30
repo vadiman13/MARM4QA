@@ -13,7 +13,7 @@ class TestAuthorizationPage:
     def test_valid_authorization(self, browser):
         authorization_page = AuthorizationPage(browser)
         authorization_page.go_to_autorization()
-        authorization_page.valid_sign_marm()  # Удалите аргумент EC
+        authorization_page.valid_sign_marm()
         assert TestUrls.AuthorizationComplatedPageUrl in browser.current_url, "Авторизация не пройдена"
 
     @allure.title("Авторизация с невалидными данными")
