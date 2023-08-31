@@ -1,3 +1,6 @@
+from typing import Optional
+
+from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 import locators.locators
@@ -11,7 +14,7 @@ from selenium.webdriver.common.by import By
 import time
 import allure
 
-
+import pdb
 
 class ReportsPage(BasePage):
     REPORTS_MAT_TAB_LABELS = By.CLASS_NAME, "mat-tab-labels"
@@ -29,10 +32,13 @@ class ReportsPage(BasePage):
         return WebDriverWait(self.driver, time).until(expected_conditions.visibility_of_element_located(element))
 
     @allure.step('Переключение таба')
-    def switch_tab(self, index):
-        tabs = self.find_reports_elements_visible(self.REPORTS_MAT_TAB_LABELS)
-        print(tabs)
-        tabs[index].click()
+    def switch_tab(self, tab_name: str):
+        # pdb.set_trace()
+        tabs_element: Optional[WebElement] = self.find_reports_elements_visible(self.REPORTS_MAT_TAB_LABELS)
+
+        tab: Optional[WebElement] = tabs_element.find_element(By.XPATH, f".//*[contains(text(), '{tab_name}')]")
+
+        tab.click()
 
     @allure.step('Проверка активности таба')
     def is_tab_active(self, index):
