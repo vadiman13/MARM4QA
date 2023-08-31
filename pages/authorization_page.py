@@ -41,6 +41,7 @@ class AuthorizationPage(BasePage):
     def wait_error_visible(self):
         self.wait_element_visible(AuthorizationLocators.ERROR, 5)
 
+    @allure.step('Авторизация')
     def get_authorization(self):
         # Заполнение полей логина и пароля
         self.go_to_page(TestUrls.AuthorizationPageUrl)

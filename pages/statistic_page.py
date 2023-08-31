@@ -1,6 +1,5 @@
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
-
 import locators.locators
 from data.urls import TestUrls
 from data.creeds import VadlidCreeds, InvalidCreeds
@@ -17,6 +16,10 @@ class StatisticPage(BasePage):
     @allure.step('Переход в раздел Статистика-Основная')
     def go_to_statistic_main(self):
         self.go_to_page(TestUrls.StatisticsMainPageUrl)
+
+    @allure.step('Проверка отображения элемента раздела статистика')
+    def find_statistic_element_visible(self, element, time=10):
+        return WebDriverWait(self.driver, time).until(expected_conditions.visibility_of_element_located(element))
 
 
 
