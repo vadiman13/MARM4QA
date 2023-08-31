@@ -9,6 +9,11 @@ class AuthorizationLocators:
 class BasePageLocators:
     HEADER_MARM_LOGO = By.XPATH, ".//a[contains(@class, 'Header_LogoYandex__3TSOI')]"
 
+class ReportsPageLocators: #Отчеты
+    REPORTS_HEADER = By.CLASS_NAME, 'title'  #Заголовок раздела "Отчеты", неуникальный локатор
+    REPORTS_MAT_TAB_LABELS = By.XPATH, "//div[@class='mat-tab-labels']"  #Селектор выбора категории отчетов
+    REPORTS_MENU_ITEM= By.XPATH, '//a[@class="sidebar-menu-item__link" and @title="Данные"]'  #Пункт меню "Отчеты"
+
 class StatisticPageLocators:
     STATISTIC_MAIN_HEADER = By.XPATH, '//div[@class="page-header" and contains(text(), "Статистика")]' #Заголовок раздела "Статистика"
     STATISTIC_MAIN_COST_ACTION_TYPE_CHART = By.ID, 'cost-action-type-chart' #Диаграмма "Выручка по видам деятельности"
