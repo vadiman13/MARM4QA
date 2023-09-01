@@ -8,6 +8,7 @@ class AuthorizationLocators:
 
 class BasePageLocators:
     HEADER_MARM_LOGO = By.XPATH, ".//a[contains(@class, 'Header_LogoYandex__3TSOI')]"
+    LOGOUT_BUTTON = By.XPATH, "//button[text()='Выйти']"
 
 class ReportsPageLocators: #Отчеты
     REPORTS_HEADER = By.CLASS_NAME, 'title'  #Заголовок раздела "Отчеты", неуникальный локатор

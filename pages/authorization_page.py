@@ -2,7 +2,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from data.urls import TestUrls
 from data.creeds import VadlidCreeds, InvalidCreeds
-from locators.locators import AuthorizationLocators, MapPageLocators
+from locators.locators import AuthorizationLocators, MapPageLocators, BasePageLocators
 import time
 from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
@@ -51,6 +51,12 @@ class AuthorizationPage(BasePage):
         self.add_value(AuthorizationLocators.PASSWORD_INPUT, VadlidCreeds.password)
         self.click_on_element(AuthorizationLocators.AUTH_BUTTON)
         self.wait_element_visible(MapPageLocators.MAP, 5)
+
+    @allure.step('Выход из учетной записи')
+    def logout (self):
+        self.find_element_clickable(BasePageLocators.LOGOUT_BUTTON)
+        self.click_on_element(BasePageLocators.LOGOUT_BUTTON)
+        self.wait_element_visible(AuthorizationLocators.AUTH_BUTTON)
 
 
 
