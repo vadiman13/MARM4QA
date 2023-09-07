@@ -17,6 +17,10 @@ class StatisticPage(BasePage):
     def go_to_statistic_main(self):
         self.go_to_page(TestUrls.StatisticsMainPageUrl)
 
+    @allure.step('Переход в раздел Статистика-Геочеки')
+    def go_to_statistic_geo(self):
+        self.go_to_page(TestUrls.StatisticsGeochecksPageUrl)
+
     @allure.step('Проверка отображения элемента раздела статистика')
     def find_statistic_element_visible(self, element, time=10):
         return WebDriverWait(self.driver, time).until(expected_conditions.visibility_of_element_located(element))

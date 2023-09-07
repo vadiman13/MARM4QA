@@ -114,6 +114,17 @@ class TestStatisticPage:
         element = statistic_page.find_statistic_element_visible(StatisticPageLocators.STATISTIC_MAIN_REGIONS_MAP)
         assert element.is_displayed(), "Тепловая карта регионов не отображена"
 
+    @allure.title("Проверка вкладки Геочеки")
+    @allure.description('Проверка iframe "Геочеки"')
+    def test_geochecs(self, browser):
+        authorization_page = AuthorizationPage(browser)
+        authorization_page.get_authorization()
+        statistic_page = StatisticPage(browser)
+        statistic_page.go_to_statistic_geo()
+        element = statistic_page.find_statistic_element_visible(StatisticPageLocators.STATISTIC_GEOCHEKI_IFRAME)
+        assert element.is_displayed(), 'Окно "Геочеки" не отображено'
+
+
 
 
 

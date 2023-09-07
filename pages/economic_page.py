@@ -63,6 +63,10 @@ class EconomicPage(BasePage):
     def go_to_retail_proceeds(self):
         self.go_to_page(TestUrls.EconomicsRetailProceedsPageUrl)
 
+    @allure.step('Переход в раздел "Анализ ТП" - таблица')
+    def go_to_tp_analize(self):
+        self.go_to_page(TestUrls.EconomicsTPAnalizeTable)
+
     @allure.step('Проверка отображения элемента раздела статистика')
-    def find_economic_element_visible(self, element, time=10):
+    def find_economic_element_visible(self, element, time=40):
         return WebDriverWait(self.driver, time).until(expected_conditions.visibility_of_element_located(element))

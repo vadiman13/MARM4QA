@@ -13,7 +13,7 @@ class BasePageLocators:
 class ReportsPageLocators: #Отчеты
     REPORTS_HEADER = By.CLASS_NAME, 'title'  #Заголовок раздела "Отчеты", неуникальный локатор
     REPORTS_MAT_TAB_LABELS = By.XPATH, "//div[@class='mat-tab-labels']"  #Селектор выбора категории отчетов
-    REPORTS_MENU_ITEM= By.XPATH, '//a[@class="sidebar-menu-item__link" and @title="Данные"]'  #Пункт меню "Отчеты"
+    REPORTS_MENU_ITEM = By.XPATH, "//li[contains(@class, 'navigation_') and contains(@class, 'ng-star-inserted')]"  #Пункт меню "Отчеты"
 
 class StatisticPageLocators:
     STATISTIC_MAIN_HEADER = By.XPATH, '//div[@class="page-header" and contains(text(), "Статистика")]' #Заголовок раздела "Статистика"
@@ -27,9 +27,15 @@ class StatisticPageLocators:
     STATISTIC_MAIN_REGIONS_MAP = By.ID, 'regions-map'  #Тепловая карта регионов
     STATISTIC_DATE_RANGE_FILTER = By.CLASS_NAME, 'date-range-filter'
     STATISTIC_INN_FILTER = By.CLASS_NAME, 'inn_filter'
+    STATISTIC_GEOCHEKI_IFRAME = By.XPATH, '//iframe[@src="https://geochecki-vpd.nalog.gov.ru/#/geochecks"]'  # Окно геочеков
 
 class MapPageLocators:
     MAP = By.CLASS_NAME, "map-view"
+    NP_STATISTIC = By.XPATH, "//*[text()=' Налогоплательщики ']/following-sibling::div"
+    KKT_STATISTIC = By.XPATH, "//*[text()='ККТ']/following-sibling::div"
+    FILTERS_BUTTON = By.XPATH, '//app-filters-button[contains(@class, "button")]'
+    FILTERS_FORM = By.XPATH, '//p[contains(@class, "title") and text()="Настройки отображения на карте"]'
+
 
 
 class EconomicsPageLocators: #Экономика
@@ -63,10 +69,10 @@ class EconomicsPageLocators: #Экономика
 
     #Объем потребления
 
-    ECONOMICS_RETAIL_CONSUMPTION_AVG_PRICE_CHART = By.ID, 'avg-price-chart'  #График "Общий объём потребления выбранных категорий" (consumerbasketstatistic)
-    ECONOMICS_RETAIL_CONSUMPTION_DATE_RANGE = By.ID, 'date-range-selector'  #Селектор выбора даты статистики
-    ECONOMICS_RETAIL_CONSUMPTION_AVG_REGIONS_COST_CHART = By.ID, 'avg-regions-cost-chart'  #Диаграмма "Объём потребления по регионам" (consbasketavgpriceregion), локатор неуникальный
-    ECONOMICS_RETAIL_CONSUMPTION_MAP_AREA = By.ID, 'map-area'  #Тепловая карта регионов (consbasketavgpriceregion)
+    ECONOMICS_RETAIL_CONSUMING_AVG_PRICE_CHART = By.ID, 'avg-price-chart'  #График "Общий объём потребления выбранных категорий" (consumerbasketstatistic)
+    ECONOMICS_RETAIL_CONSUMING_DATE_RANGE_SELECTOR = By.ID, 'date-range-selector'  #Селектор выбора даты статистики
+    ECONOMICS_RETAIL_CONSUMING_AVG_REGIONS_COST_CHART = By.ID, 'avg-regions-cost-chart'  #Диаграмма "Объём потребления по регионам" (consbasketavgpriceregion), локатор неуникальный
+    ECONOMICS_RETAIL_CONSUMING_MAP_AREA = By.ID, 'map-area'  #Тепловая карта регионов (consbasketavgpriceregion)
 
     #Выручка
 
@@ -219,3 +225,10 @@ class EconomicsPageLocators: #Экономика
     ECONOMICS_INDICATORS_TOBACCO_COST_MAP_PROCEEDS = By.CSS_SELECTOR, '[id*="area"]'  #Тепловая карта выручки регионов, неуникальный локатор
     ECONOMICS_INDICATORS_TOBACCO_COST_DIAGRAM_TOBACCO_COST_HUMAN = By.CLASS_NAME, 'dx-visibility-change-handler'  #Диаграмма "Доля табачной продукции в общих затратах населения" (Пачек в месяц), неуникальный локатор
     ECONOMICS_INDICATORS_TOBACCO_COST_MAP_PACK = By.CSS_SELECTOR, '[id*="area"]'  #Тепловая карта объема потребления регионов, неуникальный локатор
+
+    #Анализ ТП - таблица
+
+    ECONOMICS_ANALYSIS_TP_SELECTOR = By.XPATH, '//div[contains(@class, "col-md-4") and contains(@class, "view-page-links")]'  #Селектор вкладок
+    ECONOMICS_ANALYSIS_TP_DREVO_CATEGORIES = By.XPATH, '//div[contains(@class, "categories-tree") and contains(@class, "col-lg-3")]'  #Древо категорий
+    ECONOMICS_ANALYSIS_TP_DIAGRAM_BALANCE_CLASSIFIER = By.XPATH, "//div[@id='words-network']"  #Диаграмма весов классификатора, !элемент не найден
+    ECONOMICS_ANALYSIS_TP_TABLE_STATISTIC_BAR = By.CLASS_NAME, "statistic-bar"  #Плашка со статистикой, неуникальный селектор

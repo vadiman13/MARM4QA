@@ -359,7 +359,7 @@ class TestRetailPage:
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         economic_page = EconomicPage(browser)
-        economic_page.go_to_retail_total_cost
+        economic_page.go_to_retail_total_cost()
         element = economic_page.find_economic_element_visible(EconomicsPageLocators.ECONOMICS_RETAIL_TOTAL_COST_AVG_CATEGORIES_COST_CHART)
         assert element.is_displayed(), 'Диаграмма "СРЕДНЯЯ СТОИМОСТЬ ПРОДУКТОВОЙ КОРЗИНЫ ПО КАТЕГОРИЯМ" не отображена'
 
@@ -369,7 +369,7 @@ class TestRetailPage:
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         economic_page = EconomicPage(browser)
-        economic_page.go_to_retail_total_cost
+        economic_page.go_to_retail_total_cost()
         element = economic_page.find_economic_element_visible(
             EconomicsPageLocators.ECONOMICS_RETAIL_TOTAL_COST_DATE_RANGE_SELECTOR)
         assert element.is_displayed(), 'Селектор выбора даты статистики не отображен'
@@ -380,7 +380,7 @@ class TestRetailPage:
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         economic_page = EconomicPage(browser)
-        economic_page.go_to_retail_total_cost
+        economic_page.go_to_retail_total_cost()
         element = economic_page.find_economic_element_visible(
             EconomicsPageLocators.ECONOMICS_RETAIL_TOTAL_COST_GROW_DRIVERS_CHART)
         assert element.is_displayed(), 'График "Основные драйверы роста стоимости продуктовой корзины" не отображен'
@@ -391,7 +391,7 @@ class TestRetailPage:
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         economic_page = EconomicPage(browser)
-        economic_page.go_to_retail_total_cost
+        economic_page.go_to_retail_total_cost()
         element = economic_page.find_economic_element_visible(
             EconomicsPageLocators.ECONOMICS_RETAIL_TOTAL_COST_MAP_AREA)
         assert element.is_displayed(), 'Тепловая карта не отображена'
@@ -402,7 +402,7 @@ class TestRetailPage:
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         economic_page = EconomicPage(browser)
-        economic_page.go_to_retail_total_cost
+        economic_page.go_to_retail_total_cost()
         element = economic_page.find_economic_element_visible(
             EconomicsPageLocators.ECONOMICS_RETAIL_TOTAL_COST_AVG_REGIONS_COST_CHART)
         assert element.is_displayed(), 'График "Средняя стоимость продуктовой корзины по регионам" не отображен'
@@ -413,7 +413,7 @@ class TestRetailPage:
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         economic_page = EconomicPage(browser)
-        economic_page.go_to_retail_total_cost
+        economic_page.go_to_retail_total_cost()
         element = economic_page.find_economic_element_visible(
             EconomicsPageLocators.ECONOMICS_RETAIL_TOTAL_COST_AVG_CATEGORIES_CHART)
         assert element.is_displayed(), 'Диаграмма "Товар по категориям" не отображена'
@@ -424,7 +424,7 @@ class TestRetailPage:
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         economic_page = EconomicPage(browser)
-        economic_page.go_to_retail_avg_price
+        economic_page.go_to_retail_avg_price()
         element = economic_page.find_economic_element_visible(
             EconomicsPageLocators.ECONOMICS_RETAIL_AVG_PRICE_AVG_PRICE_CHART)
         assert element.is_displayed(), 'Диаграмма "Статистика изменения цены по категориям продуктов" не отображена'
@@ -435,7 +435,7 @@ class TestRetailPage:
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         economic_page = EconomicPage(browser)
-        economic_page.go_to_retail_avg_price
+        economic_page.go_to_retail_avg_price()
         element = economic_page.find_economic_element_visible(
             EconomicsPageLocators.ECONOMICS_RETAIL_AVG_PRICE_DATE_RANGE_SELECTOR)
         assert element.is_displayed(), 'Селектор выбора даты статистики не отображен'
@@ -446,7 +446,7 @@ class TestRetailPage:
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         economic_page = EconomicPage(browser)
-        economic_page.go_to_retail_avg_price
+        economic_page.go_to_retail_avg_price()
         element = economic_page.find_economic_element_visible(
             EconomicsPageLocators.ECONOMICS_RETAIL_AVG_PRICE_AVG_REGIONS_COST_CHART)
         assert element.is_displayed(), 'Диаграмма "Средняя цена по регионам" не отображена'
@@ -458,7 +458,7 @@ class TestRetailPage:
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         economic_page = EconomicPage(browser)
-        economic_page.go_to_retail_avg_price
+        economic_page.go_to_retail_avg_price()
         element = economic_page.find_economic_element_visible(
             EconomicsPageLocators.ECONOMICS_RETAIL_AVG_PRICE_MAP_AREA)
         assert element.is_displayed(), 'Тепловая карта регионов не отображена'
@@ -469,42 +469,42 @@ class TestRetailPage:
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         economic_page = EconomicPage(browser)
-        economic_page.go_to_retail_consuming
+        economic_page.go_to_retail_consuming()
         element = economic_page.find_economic_element_visible(
-            EconomicsPageLocators.ECONOMICS_RETAIL_CONSUMPTION_AVG_PRICE_CHARTING)
+            EconomicsPageLocators.ECONOMICS_RETAIL_CONSUMING_AVG_PRICE_CHART)
         assert element.is_displayed(), 'Диаграмма "Общий объём потребления выбранных категорий"'
 
     @allure.title('Объем потребления: Селектор выбора даты статистики')
     @allure.description('Проверка отображения селектора выбора даты статистики')
-    def test_retail_consumption_date_range(self, browser):
+    def test_retail_consuming_date_range(self, browser):
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         economic_page = EconomicPage(browser)
-        economic_page.go_to_retail_consumption
+        economic_page.go_to_retail_consuming()
         element = economic_page.find_economic_element_visible(
-            EconomicsPageLocators.ECONOMICS_RETAIL_CONSUMPTION_DATE_RANGE)
+            EconomicsPageLocators.ECONOMICS_RETAIL_CONSUMING_DATE_RANGE_SELECTOR)
         assert element.is_displayed(), 'Селектор выбора даты статистики не отображен'
 
     @allure.title('Объем потребления: Диаграмма "Объем потребления по регионам"')
     @allure.description('Проверка отображения диаграммы "Объем потребления по регионам"')
-    def test_retail_consumption_avg_regions_cost_chart(self, browser):
+    def test_retail_consuming_avg_regions_cost_chart(self, browser):
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         economic_page = EconomicPage(browser)
-        economic_page.go_to_retail_consumption
+        economic_page.go_to_retail_consuming()
         element = economic_page.find_economic_element_visible(
-            EconomicsPageLocators.ECONOMICS_RETAIL_CONSUMPTION_AVG_REGIONS_COST_CHART)
+            EconomicsPageLocators.ECONOMICS_RETAIL_CONSUMING_AVG_REGIONS_COST_CHART)
         assert element.is_displayed(), 'Диаграмма "Объем потребления по регионам" не отображена'
 
     @allure.title('Объем потребления: Тепловая карта регионов')
     @allure.description('Проверка отображения тепловой карты регионов')
-    def test_retail_consumption_map_area(self, browser):
+    def test_retail_consuming_map_area(self, browser):
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         economic_page = EconomicPage(browser)
-        economic_page.go_to_retail_consumption
+        economic_page.go_to_retail_consuming()
         element = economic_page.find_economic_element_visible(
-            EconomicsPageLocators.ECONOMICS_RETAIL_CONSUMPTION_MAP_AREA)
+            EconomicsPageLocators.ECONOMICS_RETAIL_CONSUMING_MAP_AREA)
         assert element.is_displayed(), 'Тепловая карта регионов не отображена'
 
     @allure.title('Выручка: График "Общая выручка выбранных категорий"')
@@ -513,7 +513,7 @@ class TestRetailPage:
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         economic_page = EconomicPage(browser)
-        economic_page.go_to_retail_proceeds
+        economic_page.go_to_retail_proceeds()
         element = economic_page.find_economic_element_visible(
             EconomicsPageLocators.ECONOMICS_RETAIL_PROCEEDS_AVG_PRICE_CHART)
         assert element.is_displayed(), 'График "Общая выручка выбранных категорий" не отображен'
@@ -524,7 +524,7 @@ class TestRetailPage:
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         economic_page = EconomicPage(browser)
-        economic_page.go_to_retail_proceeds
+        economic_page.go_to_retail_proceeds()
         element = economic_page.find_economic_element_visible(
             EconomicsPageLocators.ECONOMICS_RETAIL_PROCEEDS_DATE_RANGE)
         assert element.is_displayed(), 'Селектор выбора даты статистики не отображен'
@@ -535,7 +535,7 @@ class TestRetailPage:
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         economic_page = EconomicPage(browser)
-        economic_page.go_to_retail_proceeds
+        economic_page.go_to_retail_proceeds()
         element = economic_page.find_economic_element_visible(
             EconomicsPageLocators.ECONOMICS_RETAIL_PROCEEDS_AVG_REGIONS_COST_CHART)
         assert element.is_displayed(), 'Диаграмма "Выручка по регионам" не отображена'
@@ -546,10 +546,63 @@ class TestRetailPage:
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         economic_page = EconomicPage(browser)
-        economic_page.go_to_retail_proceeds
+        economic_page.go_to_retail_proceeds()
         element = economic_page.find_economic_element_visible(
             EconomicsPageLocators.ECONOMICS_RETAIL_PROCEEDS_MAP_AREA)
         assert element.is_displayed(), 'Тепловая карта регионов не отображена'
+
+class TpAnalize:
+
+    #Анализ ТП - таблица:
+    @allure.title('Анализ ТП: Таблица')
+    @allure.description('Проверка отображения таблицы анализа ТП')
+    def test_analysis_tp_table(self, browser):
+        authorization_page = AuthorizationPage(browser)
+        authorization_page.get_authorization()
+        economic_page = EconomicPage(browser)
+        economic_page.go_to_tp_analize()
+        element = economic_page.find_economic_element_visible(EconomicsPageLocators.ECONOMICS_ANALYSIS_TP_SELECTOR)
+        assert element.is_displayed(), 'Таблица анализа ТП не отображена'
+
+    #Анализ ТП - древо категорий:
+
+    @allure.title('Анализ ТП: Древо категорий')
+    @allure.description('Проверка отображения древа категорий анализа ТП')
+    def test_analysis_tp_drevo_categories(self, browser):
+        authorization_page = AuthorizationPage(browser)
+        authorization_page.get_authorization()
+        economic_page = EconomicPage(browser)
+        economic_page.go_to_tp_analize()
+        element = economic_page.find_economic_element_visible(
+            EconomicsPageLocators.ECONOMICS_ANALYSIS_TP_DREVO_CATEGORIES)
+        assert element.is_displayed(), 'Древо категорий анализа ТП не отображено'
+
+    #Анализ ТП - диаграмма весов классификатора: **
+
+    @allure.title('Анализ ТП: Диаграмма весов классификатора')
+    @allure.description('Проверка отображения диаграммы весов классификатора анализа ТП')
+    def test_analysis_tp_diagram_balance_classifier(self, browser):
+        authorization_page = AuthorizationPage(browser)
+        authorization_page.get_authorization()
+        economic_page = EconomicPage(browser)
+        economic_page.go_to_tp_analize()
+        element = economic_page.find_economic_element_visible(
+            EconomicsPageLocators.ECONOMICS_ANALYSIS_TP_DIAGRAM_BALANCE_CLASSIFIER)
+        assert element.is_displayed(), 'Диаграмма весов классификатора анализа ТП не отображена'
+
+    # Анализ ТП - плашка со статистикой:
+
+    @allure.title('Анализ ТП: Плашка со статистикой')
+    @allure.description('Проверка отображения плашки со статистикой анализа ТП')
+    def test_analysis_tp_table_statistic_bar(self, browser):
+        authorization_page = AuthorizationPage(browser)
+        authorization_page.get_authorization()
+        economic_page = EconomicPage(browser)
+        economic_page.go_to_tp_analize()
+        element = economic_page.find_economic_element_visible(
+            EconomicsPageLocators.ECONOMICS_ANALYSIS_TP_TABLE_STATISTIC_BAR)
+        assert element.is_displayed(), 'Плашка со статистикой анализа ТП не отображена'
+
 
 
 

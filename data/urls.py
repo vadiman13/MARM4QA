@@ -35,4 +35,5 @@ class TestUrls:
     EconomicsIndicatorsAlcoholCostPageUrl = 'https://marm.nalog.gov.ru:9085/marm/economics/indicators/alcoholcost' #Экономика-Индикаторы-Доля_алкоголя_в_затратах
     EconomicsIndicatorsMedicineCostPageUrl = 'https://marm.nalog.gov.ru:9085/marm/economics/indicators/medicinescost' #Экономика-Индикаторы-Доля_медикаментов_в_затратах
     EconomicsIndicatorsTobaccoCostPageUrl = 'https://marm.nalog.gov.ru:9085/marm/economics/indicators/tobaccocost' #Экономика-Индикаторы-Доля_табака_в_затратах
+    EconomicsTPAnalizeTable = 'https://marm.nalog.gov.ru:9085/marm/economics/tpanalize/12453;level=1/table'
     ReportsPageUrl = 'https://marm.nalog.gov.ru:9085/marm/reports' #Отчеты
