@@ -232,3 +232,8 @@ class EconomicsPageLocators: #Экономика
     ECONOMICS_ANALYSIS_TP_DREVO_CATEGORIES = By.XPATH, '//div[contains(@class, "categories-tree") and contains(@class, "col-lg-3")]'  #Древо категорий
     ECONOMICS_ANALYSIS_TP_DIAGRAM_BALANCE_CLASSIFIER = By.XPATH, "//div[@id='words-network']"  #Диаграмма весов классификатора, !элемент не найден
     ECONOMICS_ANALYSIS_TP_TABLE_STATISTIC_BAR = By.CLASS_NAME, "statistic-bar"  #Плашка со статистикой, неуникальный селектор
+
+class MarketonPageLocators:
+
+    MARKETON_TABLE = By.XPATH, '//div[@class="table"]'
+    MARKET_EXAMPLE = By.XPATH, "//a[text()='ОРПЦ \"ФУД СИТИ\"']"
