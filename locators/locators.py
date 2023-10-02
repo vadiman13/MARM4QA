@@ -237,3 +237,30 @@ class MarketonPageLocators:
 
     MARKETON_TABLE = By.XPATH, '//div[@class="table"]'
     MARKET_EXAMPLE = By.XPATH, "//a[text()='ОРПЦ \"ФУД СИТИ\"']"
+
+class ClaimsPageLocators:
+    CONTROL_COMPLAINTS_SUMMARY_DIAGRAM_STATISTIC_COMPLAINTS = By.CLASS_NAME, "summary-charts"  # Диаграммы статистики жалоб, неуникальный локатор
+    CONTROL_COMPLAINTS_SUMMARY_DIAGRAM_DYNAMICS_COMPLAINTS = By.CLASS_NAME, "dynamics-body"  # Диаграмма динамики жалоб, неуникальный локатор
+    CONTROL_COMPLAINTS_SUMMARY_SELECTOR_DATE = By.CSS_SELECTOR, ".claims-dynamics-filter-form.ng-untouched.ng-pristine.ng-valid"  # Селектор дат ДОЛЖЕН БЫТЬ ВЫПАДАЮЩИЙ КАЛЕНДАРЬ?
+
+    # Список
+    CONTROL_COMPLAINTS_LIST = By.XPATH, "//*[contains(@class,'mat-tab-link') and contains(text(),'Список')]"  # Переход к списку жалоб
+    CONTROL_COMPLAINTS_LIST_CLAIM = By.XPATH, "//td[@class='mat-cell cdk-cell cdk-column-DateClaim mat-column-DateClaim ng-star-inserted']"
+    CONTROL_COMPLAINTS_LIST_FILTER_PANEL = By.CSS_SELECTOR, "form.filter-form.ng-untouched.ng-pristine.ng-valid"  # Панель фильтрации жалоб
+    CONTROL_COMPLAINTS_LIST_TABLE_COMPLAINTS = By.CLASS_NAME, "claims-table"  # Таблица жалоб, неуникальный локатор
+    CONTROL_COMPLAINTS_LIST_TABLE_FILTER_PANEL_ = By.CSS_SELECTOR, ".mat-row.cdk-row.ng-star-inserted"  # Панель фильтрации жалоб, неуникальный локатор
+    CONTROL_COMPLAINTS_LIST_SHTORKA_INFO_COMPLAINTS = By.XPATH, '//div[@class="general-info show fixed"]'
+        #By.CSS_SELECTOR, "div.general-info.show.fixed"  # Шторка инфо о жалобе, неуникальный локатор
+
+class AutonomusPageLocators:
+    #Автономные территории
+    CONTROL_AUTONOMOUS_HEADER = By.XPATH, "//div[@class='heading' and contains(text(), ' Автономные территории ')]"  #Заголовок страницы
+    CONTROL_AUTONOMOUS_BUTTON_ADD_AT = By.CSS_SELECTOR, "button.button.button-img.add-btn.ng-star-inserted"  #Кнопка добавления АТ
+    CONTROL_AUTONOMOUS_FILTERS_PANEL = By.CLASS_NAME, "regulatory-documents-filter"  #Панель фильтров, неуникальный локатор
+    CONTROL_AUTONOMOUS_BUTTON_RESET_FILTER = By.CSS_SELECTOR, "button.button-reset"  #Кнопка сброса фильтров, неуникальный локатор
+    CONTROL_AUTONOMOUS_BUTTON_UNLOADING_LOGS = By.CSS_SELECTOR, "button.button-img.button-primary.ng-star-inserted"  #Кнопка выгрузки логов
+    CONTROL_AUTONOMOUS_TABLE_AT = By.CLASS_NAME, "table-container"  #Таблица АТ, неуникальный локатор
+    CONTROL_AUTONOMOUS_CARD_TREE = By.CLASS_NAME, "tree"
+    CONTROL_AUTONOMOUS_CARD_TEST = By.XPATH, '//td[@class="mat-cell cdk-cell clickable cdk-column-region mat-column-region ng-star-inserted"][normalize-space()="01 - Республика Адыгея"]'
+    CONTROL_AUTONOMOUS_CARD_AT = By.CSS_SELECTOR, "td.mat-cell.cdk-cell.clickable.cdk-column-region.mat-column-region.ng-star-inserted"  #Карточка АТ, неуникальный локатор
+    CONTROL_AUTONOMOUS_HEADER_REGION = By.CLASS_NAME, "heading"  #Шапка с наименование региона, неуникальный локатор

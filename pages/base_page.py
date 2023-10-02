@@ -36,7 +36,8 @@ class BasePage:
     def add_value(self, element, value):
         self.find_element(element).send_keys(value)
 
-
+    def get_current_url(self):
+        return self.browser.current_url
 
     def scroll_to(self, element):
         self.driver.execute_script("arguments[0].scrollIntoView();", self.find_element(element))

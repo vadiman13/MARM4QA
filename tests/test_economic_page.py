@@ -14,6 +14,17 @@ import time
 import allure
 from data.elements import STATISTIC_ELEMENTS
 
+# @allure.title('Проверка навигации по разделу "Экономика"')
+# class TestEconomicSelector:
+#     @allure.title('Проверка переключения подразделов')
+#     @allure.description('Переключение таба выбора подраздела')
+#     def test_switch_economic_tab(self, tab_name: str):
+#         # pdb.set_trace()
+#         tabs_element: Optional[WebElement] = self.find_element_visible(self.MAT_TAB_LINKS)
+#
+#         tab: Optional[WebElement] = tabs_element.find_element(By.XPATH, f".//*[contains(text(), '{tab_name}')]")
+#
+#         tab.click()
 @allure.title('Тесты подраздела "ТЭК"')
 class TestFuelPage:
 

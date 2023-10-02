@@ -96,7 +96,7 @@ class TestStatisticPage:
 
     @allure.title("Проверка ТОП 100 НП c отрицательной выручкой")
     @allure.description('Проверка видимости элемента "ТОП 100 НП c отрицательной выручкой" в видимой области экрана')
-    def test_check_taxpayers_top_chart(self, browser):
+    def test_check_taxpayers_negative_top_chart(self, browser):
         authorization_page = AuthorizationPage(browser)
         authorization_page.get_authorization()
         statistic_page = StatisticPage(browser)

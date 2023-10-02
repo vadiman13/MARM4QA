@@ -14,6 +14,7 @@ import allure
 
 @allure.title('Тесты на раздел "Экономика"')
 class EconomicPage(BasePage):
+    MAT_TAB_LINKS = By.CLASS_NAME, "mat-tab-links"
 
     @allure.step('Переход в раздел "Экономика" - "ТЭК"')
     def go_to_fuel(self):
@@ -70,3 +71,12 @@ class EconomicPage(BasePage):
     @allure.step('Проверка отображения элемента раздела статистика')
     def find_economic_element_visible(self, element, time=40):
         return WebDriverWait(self.driver, time).until(expected_conditions.visibility_of_element_located(element))
+
+    @allure.step('Переключение таба')
+    def switch_tab(self, tab_name: str):
+        # pdb.set_trace()
+        tabs_element: Optional[WebElement] = self.find_element_visible(self.MAT_TAB_LINKS)
+
+        tab: Optional[WebElement] = tabs_element.find_element(By.XPATH, f".//*[contains(text(), '{tab_name}')]")
+
+        tab.click()
