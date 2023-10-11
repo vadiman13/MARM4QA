@@ -5,6 +5,7 @@ class AuthorizationLocators:
     PASSWORD_INPUT = By.ID, "password"
     AUTH_BUTTON = By.XPATH, "//button[@type='submit']"
     ERROR = By.XPATH, '//p[contains(text(), "Ошибка. Вы ввели неверные авторизационные данные.")]'
+    AUTHORIZATION_FORM = By.XPATH, '//div[contains(@class, "sc-fKFyDc")]'
 
 class BasePageLocators:
     HEADER_MARM_LOGO = By.XPATH, ".//a[contains(@class, 'Header_LogoYandex__3TSOI')]"
@@ -35,6 +36,7 @@ class MapPageLocators:
     KKT_STATISTIC = By.XPATH, "//*[text()='ККТ']/following-sibling::div"
     FILTERS_BUTTON = By.XPATH, '//app-filters-button[contains(@class, "button")]'
     FILTERS_FORM = By.XPATH, '//p[contains(@class, "title") and text()="Настройки отображения на карте"]'
+    ASK_KKT_LOGO = By.CLASS_NAME, 'logo-title-block'
 
 
 
