@@ -80,3 +80,12 @@ class EconomicPage(BasePage):
         tab: Optional[WebElement] = tabs_element.find_element(By.XPATH, f".//*[contains(text(), '{tab_name}')]")
 
         tab.click()
+
+    # @allure.step('Проверка активности таба')
+    # def is_tab_active(self):
+    #     tab_element = self.find_reports_elements_visible(self.REPORTS_MAT_TAB_LABELS)
+    #     active_tab = tab_element.find_element(By.XPATH, "//div[@role='tab' and @aria-selected='true']")
+    #     comment_element = active_tab.find_element(By.CLASS_NAME, 'mat-tab-label-content')
+    #     comment_text = comment_element.get_attribute("innerHTML").strip()
+    #     comment_text = comment_text.replace("<!--", "").replace("-->", "").strip()
+    #     return comment_text

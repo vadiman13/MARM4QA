@@ -19,6 +19,10 @@ class Comments:
 class MetroStation:
     station = 'ВДНХ'
 
+class SearchData:
+    search_inn = '7724490000'
+    search_kkt = ''
+
 class ExpectedText:
     heading_on_order_page = 'Для кого самокат'
     heading_on_confirmation_modal = 'Хотите оформить заказ?'

@@ -25,7 +25,8 @@ from data.elements import STATISTIC_ELEMENTS
 #         tab: Optional[WebElement] = tabs_element.find_element(By.XPATH, f".//*[contains(text(), '{tab_name}')]")
 #
 #         tab.click()
-@allure.title('Тесты подраздела "ТЭК"')
+@allure.epic("Экономика")
+@allure.feature('Тесты подраздела "ТЭК"')
 class TestFuelPage:
 
     @allure.title('Проверка диаграммы "Общая выручка"')
@@ -118,7 +119,8 @@ class TestFuelPage:
         assert element.is_displayed(), 'Тепловая карта средней цены по регионам не отображена'
 
 
-@allure.title('Тесты подраздела "Индикаторы"')
+@allure.epic("Экономика")
+@allure.feature('Тесты подраздела "Индикаторы"')
 class TestIndicatorsPage:
     @allure.title('Доля корзины в доходах: "ДОЛЯ ПРОДУКТОВОЙ КОРЗИНЫ В ДОХОДАХ НАСЕЛЕНИЯ"')
     @allure.description(
@@ -362,7 +364,8 @@ class TestIndicatorsPage:
         assert element.is_displayed(), 'Тепловая карта объема потребления регионов не отображена'
 
 
-@allure.title('Тесты подраздела "Розница"')
+@allure.epic("Экономика")
+@allure.feature('Тесты подраздела "Розница"')
 class TestRetailPage:
     @allure.title('Стоимость: Диаграмма СРЕДНЯЯ СТОИМОСТЬ ПРОДУКТОВОЙ КОРЗИНЫ ПО КАТЕГОРИЯМ')
     @allure.description('Проверка отображения диаграммы СРЕДНЯЯ СТОИМОСТЬ ПРОДУКТОВОЙ КОРЗИНЫ ПО КАТЕГОРИЯМ')
@@ -562,6 +565,9 @@ class TestRetailPage:
             EconomicsPageLocators.ECONOMICS_RETAIL_PROCEEDS_MAP_AREA)
         assert element.is_displayed(), 'Тепловая карта регионов не отображена'
 
+
+@allure.epic("Экономика")
+@allure.feature('Тесты подраздела "Анализ ТП"')
 class TpAnalize:
 
     #Анализ ТП - таблица:

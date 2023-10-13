@@ -11,6 +11,7 @@ class BasePageLocators:
     HEADER_MARM_LOGO = By.XPATH, ".//a[contains(@class, 'Header_LogoYandex__3TSOI')]"
     LOGOUT_BUTTON = By.XPATH, "//button[text()='Выйти']"
 
+
 class ReportsPageLocators: #Отчеты
     REPORTS_HEADER = By.CLASS_NAME, 'title'  #Заголовок раздела "Отчеты", неуникальный локатор
     REPORTS_MAT_TAB_LABELS = By.XPATH, "//div[@class='mat-tab-labels']"  #Селектор выбора категории отчетов
@@ -37,7 +38,12 @@ class MapPageLocators:
     FILTERS_BUTTON = By.XPATH, '//app-filters-button[contains(@class, "button")]'
     FILTERS_FORM = By.XPATH, '//p[contains(@class, "title") and text()="Настройки отображения на карте"]'
     ASK_KKT_LOGO = By.CLASS_NAME, 'logo-title-block'
-
+    SEARCH_INPUT = By.XPATH, '//*[@placeholder="Поиск по НП, ККТ, торговым точкам и объектам"]'
+    SEARCH_BUTTON = By.XPATH, '//span[@class="icon icon-input-search-white"]'
+    SEARCH_NP_BUTTON = By.XPATH, '//span[contains(text(), "НП")]'
+    SEARCH_NP_TEST_RESULT = By.XPATH, '//header[@class="item__text ng-star-inserted" and text()="7724490000 АО ПОЧТА РОССИИ"]'
+    SEARCH_NP_TEST_CARD_BUTTON = By.XPATH, '//a[starts-with(@class, "link") and contains(@href, "/marm/map-clean/card/taxpayer/7724490000")]'
+    SEARCH_NP_TEST_CARD_HEADER = By.XPATH, '//div[contains(@class, "card-breadcrumbs__item") and contains(text(), "7724490000 - АО ПОЧТА РОССИИ (Почта России)")]'
 
 
 class EconomicsPageLocators: #Экономика

@@ -7,7 +7,10 @@ import time
 
 
 
-class TestAuthorizationPage:
+
+@allure.epic("Авторизация")
+@allure.feature("Тесты формы авторизации")
+class TestAuthorizationForm:
 
     @allure.title("Успешная авторизация")
     @allure.description("Проверка авторизации с валидными данными, переход в МАРМ")
@@ -25,6 +28,11 @@ class TestAuthorizationPage:
         authorization_page.invalid_sign_marm()
         authorization_page.wait_error_visible()
         assert authorization_page.find_element(AuthorizationLocators.ERROR), "Не отображена ошибка авторизации"
+
+
+@allure.epic("Авторизация")
+@allure.feature("Тесты формы авторизации")
+class TestBackAuthorizationPage:
 
     @allure.title("Возврат в форму авторизации")
     @allure.description('Проверка возврата в форму авторизации при клике на логотип АСК ККТ')
