@@ -16,6 +16,9 @@ from selenium.webdriver.common.by import By
 import time
 import allure
 
+
+@allure.epic("Контроль")
+@allure.feature("Тесты подраздела Жалобы")
 class TestClaimsSummary:
 
     @allure.title('Проверка диаграмм статистики жалоб')
@@ -67,6 +70,8 @@ class TestClaimsSummary:
         assert element.is_displayed(), 'Переход во вкладку "Список" не осуществлен'
 
 
+@allure.epic("Контроль")
+@allure.feature("Тесты подраздела Жалобы")
 class TestClaimsList:
 
     @allure.title('Проверка фильтра списка жалоб')

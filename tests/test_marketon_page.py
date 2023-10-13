@@ -15,6 +15,9 @@ from selenium.webdriver.common.by import By
 import time
 import allure
 
+
+@allure.epic("Контроль")
+@allure.feature("Тесты подраздела Рынки")
 class TestMarketon:
 
     # def test_check_fuel_cost_action_type_chart(self, browser):

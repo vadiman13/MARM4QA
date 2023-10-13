@@ -16,6 +16,9 @@ from selenium.webdriver.common.by import By
 import time
 import allure
 
+
+@allure.epic("Контроль")
+@allure.feature("Тесты подраздела Автономность")
 class TestAutonomusPage:
     @allure.title('Проверка кнопки добавления АТ')
     @allure.description('Проверка отображения кнопки добавления АТ в шапке раздела')

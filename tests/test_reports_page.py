@@ -6,6 +6,8 @@ from pages.authorization_page import AuthorizationPage
 import allure
 
 
+@allure.epic("Отчеты")
+@allure.feature("Проверка элементов раздела отчетов")
 class TestReportsPage:
 
     @allure.title('Проверка отчета "Страница отчетов"')

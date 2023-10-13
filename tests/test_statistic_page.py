@@ -13,7 +13,8 @@ import time
 import allure
 from data.elements import STATISTIC_ELEMENTS
 
-
+@allure.epic("Статистика")
+@allure.feature("Тесты страницы Статистика - основная")
 class TestStatisticPage:
 
     @allure.title("Проверка выпадающего календаря выбора диапазона дат")
@@ -114,6 +115,9 @@ class TestStatisticPage:
         element = statistic_page.find_statistic_element_visible(StatisticPageLocators.STATISTIC_MAIN_REGIONS_MAP)
         assert element.is_displayed(), "Тепловая карта регионов не отображена"
 
+@allure.epic("Статистика")
+@allure.feature("Тесты страницы Статистика - геочеки")
+class TestGeochecs:
     @allure.title("Проверка вкладки Геочеки")
     @allure.description('Проверка iframe "Геочеки"')
     def test_geochecs(self, browser):
