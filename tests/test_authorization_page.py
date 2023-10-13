@@ -9,7 +9,7 @@ import time
 
 
 @allure.epic("Авторизация")
-@allure.feature("Тесты формы авторизации")
+@allure.feature("Проверка авторизации")
 class TestAuthorizationForm:
 
     @allure.title("Успешная авторизация")
@@ -31,7 +31,7 @@ class TestAuthorizationForm:
 
 
 @allure.epic("Авторизация")
-@allure.feature("Тесты формы авторизации")
+@allure.feature("Проверка перехода в форму авторизации")
 class TestBackAuthorizationPage:
 
     @allure.title("Возврат в форму авторизации")

@@ -568,7 +568,7 @@ class TestRetailPage:
 
 @allure.epic("Экономика")
 @allure.feature('Тесты подраздела "Анализ ТП"')
-class TpAnalize:
+class TestTpAnalize:
 
     #Анализ ТП - таблица:
     @allure.title('Анализ ТП: Таблица')
